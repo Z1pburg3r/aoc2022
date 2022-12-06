@@ -31,7 +31,7 @@ fn sol1() -> io::Result<()> {
 
     let sections_vec = parse_input();
     
-    let fully_contains = sections_vec.into_iter()
+    let partially_contains = sections_vec.into_iter()
         .filter(|sections| {
             let s1_contain_lower = sections.section1
                 .contains(sections.section2.start());
@@ -48,7 +48,7 @@ fn sol1() -> io::Result<()> {
         .collect::<Vec<Sections>>()
         .len();
 
-    println!("{fully_contains}");
+    println!("{partially_contains}");
 
     Ok(())
 }
